@@ -12,7 +12,7 @@ The following timeline
 was generated running
 
 ```bash
-./dagman-timeliner -in jobsatate.log -ignore IMAGE_SIZE
+./dagman-timeliner -in jobsatate.log -events-i IMAGE_SIZE -events-deco=false
 ```
 
 from the `jobsatate.log` file:
@@ -46,7 +46,9 @@ The complete workflow for obtain a timeline diagram is:
 
 ```bash
 Usage of ./dagman-timeliner:
-  -ignore string
+  -events-deco
+        decorate events with information on total time of events (default true)
+  -events-i string
         comma separated list of events to ignore, ex. IMAGE_SIZE,JOB_SUCCESS
   -in string
         filepath of the DAG jobstate_log
