@@ -5,14 +5,14 @@ Create timelines from
 
 ## Example
 
-The following timeliner
+The following timeline
 
 ![timeline](./images/timeline-1.png)
 
 was generated running
 
 ```bash
-./dagman-timeliner -in jobsatate.log -ignore IMAGE_SIZE -out
+./dagman-timeliner -in jobsatate.log -ignore IMAGE_SIZE
 ```
 
 from the `jobsatate.log` file:
@@ -42,7 +42,7 @@ DAGMan-Timeliner does not generate itself the image but
 
 The complete workflow for obtain a timeline diagram is:
 
-
+![timeline](./images/flow.png)
 
 ```bash
 Usage of ./dagman-timeliner:
