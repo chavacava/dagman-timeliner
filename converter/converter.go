@@ -82,7 +82,7 @@ func (c *Converter) Convert(line string) (string, error) {
 	result := fmt.Sprintf("@%d\n%s is %s", event.timestamp-c.timeRef, job, eventID)
 	if t, ok := c.jobs[job]; !ok {
 		result = fmt.Sprintf("concise \"%s\" as %s\n%s", job, job, result)
-	} else if c.conf.decoEvents {
+	} else if c.conf.decoEvents && event.timestamp-t > 0 {
 		result = fmt.Sprintf("%s@%d <-> @%d : %ds\n%s", job, t-c.timeRef, event.timestamp-c.timeRef, event.timestamp-t, result)
 	}
 	c.jobs[job] = event.timestamp
